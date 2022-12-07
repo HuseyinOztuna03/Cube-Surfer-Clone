@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class Stack : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public List<GameObject> cubeList = new List<GameObject>();
+    private GameObject lastCube;
+
     void Start()
     {
-        
+        UpdateLastCube();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncCubeStack(GameObject _gameobject)
     {
-        
+        transform.position = new Vector3(transform.position.x, transform.position.y + 2f, transform.position.z);
+        _gameobject.transform.position = new Vector3(lastCube.transform.position.x, lastCube.transform.position.y - 2f, lastCube.transform.position.z);
+        _gameobject.transform.SetParent(transform);
+        cubeList.Add(_gameobject);
+        UpdateLastCube();
+    }
+
+    private void UpdateLastCube()
+    {
+        lastCube = cubeList[cubeList.Count - 1];
     }
 }
