@@ -35,6 +35,11 @@ public class Cube : MonoBehaviour
                 stack.IncCubeStack(gameObject);
                 SetDirection();
             }
+
+            if (hit.transform.name == "Obstacle")
+            {
+                stack.DecCubeStack(gameObject);
+            }
         }
     }
 

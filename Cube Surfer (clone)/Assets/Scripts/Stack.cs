@@ -20,6 +20,12 @@ public class Stack : MonoBehaviour
         cubeList.Add(_gameobject);
         UpdateLastCube();
     }
+    public void DecCubeStack(GameObject _gameobject)
+    {
+        _gameobject.transform.parent = null;
+        cubeList.Remove(_gameobject);
+        UpdateLastCube();
+    }
 
     private void UpdateLastCube()
     {
