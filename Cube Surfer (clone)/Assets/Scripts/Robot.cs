@@ -2,14 +2,11 @@ using UnityEngine;
 
 public class Robot : MonoBehaviour
 {
-    [SerializeField] private float forwardMs;
-    [SerializeField] private float horizontalMs;
-    [SerializeField] private float limit;
+    [SerializeField] private float forwardMs, horizontalMs, limit;
 
     private float newPositionX;
 
     private float horizontalValue;
-
     public float HorizontalValue
     {
         get { return horizontalValue; }
